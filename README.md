@@ -1,6 +1,6 @@
 # GDShader emacs major mode
 
-Extention to [glsl-mode](https://github.com/jimhourihan/glsl-mode) that adds font-locking for Godot 4.1's extensions to
+Extension to [glsl-mode](https://github.com/jimhourihan/glsl-mode) that adds font-locking for Godot 4.1's extensions to
 GLSL.
 
 See [Godot's shader reference documentation](https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/index.html) for details.
