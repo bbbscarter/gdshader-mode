@@ -7,10 +7,15 @@ See [Godot's shader reference documentation](https://docs.godotengine.org/en/sta
 
 ## Usage
 
-Basic usage:
-
+Clone this repository in your emacs path and use:
 ```el
-(use-package gdshader-mode)
+(require 'gdshader-mode)
+```
+
+Or, if using `use-package` and `straight`
+```el
+(use-package gdshader-mode 
+  :straight (gdshader-mode :type git :host github :repo "bbbscarter/gdshader-mode"))
 ```
 
 To enable company-mode keyword completion, gdshader-mode provides a list of
@@ -18,6 +23,8 @@ keywords through `gdshader-all-keywords`. This can be used like so:
 
 ```el
 (use-package gdshader-mode
+  :straight (gdshader-mode :type git :host github :repo "bbbscarter/gdshader-mode")
+
   ;; Optional customisations for company-mode completion.
   :init
   (defun gdshader-config()
