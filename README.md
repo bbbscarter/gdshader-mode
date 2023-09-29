@@ -7,14 +7,14 @@ See [Godot's shader reference documentation](https://docs.godotengine.org/en/sta
 
 ## Usage
 
-Basic usage is very simple.
+Basic usage:
 
 ```el
-(use-package gdshader-mode
+(use-package gdshader-mode)
 ```
 
-To enable company-mode keyword completion, gdshader provides a list of keywords
-through `gdshader-all-keywords`. This can be used like so:
+To enable company-mode keyword completion, gdshader-mode provides a list of
+keywords through `gdshader-all-keywords`. This can be used like so:
 
 ```el
 (use-package gdshader-mode
