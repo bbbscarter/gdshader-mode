@@ -98,7 +98,6 @@
   "Default highlighting expressions for GDShader mode.")
 
 (defvar gdshader-all-keywords
-  "List of all the font-locked words. Useful for completion systems like 'company-keywords'"
   (append glsl-builtin-list
           glsl-keyword-list
           glsl-type-list
@@ -110,7 +109,8 @@
           gdshader-builtin-list
           gdshader-keyword-list
           gdshader-type-list
-          gdshader-qualifier-list))
+          gdshader-qualifier-list)  
+  "List of all the font-locked words. Useful for completion systems like 'company-keywords'")
 
 ;;;###autoload
 (define-derived-mode gdshader-mode
