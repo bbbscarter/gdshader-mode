@@ -76,29 +76,8 @@
   ) ; eval-and-compile
 
 
-(defvar gdshader-font-lock-keywords-1
-  (append glsl-font-lock-keywords
-          (list
-           (cons (eval-when-compile
-                   (glsl-ppre gdshader-builtin-list))
-                 glsl-builtin-face)
-           (cons (eval-when-compile
-                   (glsl-ppre gdshader-type-list))
-                 glsl-type-face)
-           (cons (eval-when-compile
-                   (glsl-ppre gdshader-qualifier-list))
-                 glsl-qualifier-face)
-           (cons (eval-when-compile
-                   (glsl-ppre gdshader-keyword-list))
-                 glsl-keyword-face)
-           ))
-  "Highlighting expressions for GDShader mode.")
-
-(defvar gdshader-font-lock-keywords gdshader-font-lock-keywords-1
-  "Default highlighting expressions for GDShader mode.")
-
 (defvar gdshader-all-keywords
-  (append glsl-builtin-list
+  (append glsl-builtins-list
           glsl-keyword-list
           glsl-type-list
           glsl-qualifier-list
@@ -112,6 +91,11 @@
           gdshader-qualifier-list)  
   "List of all the font-locked words. Useful for completion systems like 'company-keywords'")
 
+(defvar gdshader--type-rx (regexp-opt gdshader-type-list 'symbols))
+(defvar gdshader--keywords-rx (regexp-opt gdshader-keyword-list 'symbols))
+(defvar gdshader--builtins-rx (regexp-opt gdshader-builtin-list 'symbols))
+(defvar gdshader--qualifier-rx (regexp-opt gdshader-qualifier-list 'symbols))
+
 ;;;###autoload
 (define-derived-mode gdshader-mode
   glsl-mode "GDShader"
@@ -120,7 +104,16 @@
 
   (setq-local glsl-additional-built-ins '("NODE_POSITION_WORLD"))
   (setq-local glsl-additional-keywords '("shader_type"))
-  (set (make-local-variable 'font-lock-defaults) '(gdshader-font-lock-keywords)))
+
+  (font-lock-add-keywords
+   nil
+   `(
+     (,gdshader--builtins-rx         . glsl-builtins-face)
+     (,gdshader--type-rx             . glsl-builtins-face)
+     (,gdshader--keywords-rx         . glsl-keyword-face)
+     (,gdshader--qualifier-rx        . glsl-qualifier-face))))
+
+  ;; (set (make-local-variable 'font-lock-defaults) '(gdshader-font-lock-keywords)))
 
 
 ;;;###autoload
