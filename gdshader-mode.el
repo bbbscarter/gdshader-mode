@@ -1,4 +1,4 @@
-;;; gdshader-mode.el --- Major mode for Godot gdshader
+;;; gdshader-mode.el --- Major mode for Godot gdshader files  -*- lexical-binding: t; -*-
 
 ;; Author: Simon Carter <bbbscarter@gmail.com>
 ;; URL: https://github.com/bbbscarter/gdshader-mode
@@ -88,7 +88,7 @@
           gdshader-keyword-list
           gdshader-type-list
           gdshader-qualifier-list)
-  "List of all the font-locked words.  Useful for completion systems like 'company-keywords'.")
+  "List of all the font-locked words.  Useful for completion systems like `company-keywords'.")
 
 (defvar gdshader--type-rx (regexp-opt gdshader-type-list 'symbols))
 (defvar gdshader--keywords-rx (regexp-opt gdshader-keyword-list 'symbols))
