@@ -3,7 +3,7 @@
 ;; Author: Simon Carter <bbbscarter@gmail.com>
 ;; URL: https://github.com/bbbscarter/gdshader-mode
 ;; Keywords: languages OpenGL GPU Godot
-;; Package-Requires: ((glsl-mode "2.4"))
+;; Package-Requires: ((emacs "24.3") (glsl-mode "2.4"))
 ;; Version: 0.1
 
 ;; Copyright (C) 2023 bbbscarter
@@ -72,8 +72,7 @@
       "diffuse_toon" "specular_schlick_ggx" "specular_blinn" "specular_phong"
       "specular_toon" "specular_disabled" "skip_vertex_transform" "world_vertex_coords"
       "ensure_correct_normals" "shadows_disabled" "ambient_light_disabled" "shadow_to_opacity"
-      "vertex_lighting" "particle_trails" "alpha_to_coverage" "alpha_to_coverage_and_one"))
-  ) ; eval-and-compile
+      "vertex_lighting" "particle_trails" "alpha_to_coverage" "alpha_to_coverage_and_one"))) ; eval-and-compile
 
 
 (defvar gdshader-all-keywords
@@ -88,8 +87,8 @@
           gdshader-builtin-list
           gdshader-keyword-list
           gdshader-type-list
-          gdshader-qualifier-list)  
-  "List of all the font-locked words. Useful for completion systems like 'company-keywords'")
+          gdshader-qualifier-list)
+  "List of all the font-locked words.  Useful for completion systems like 'company-keywords'.")
 
 (defvar gdshader--type-rx (regexp-opt gdshader-type-list 'symbols))
 (defvar gdshader--keywords-rx (regexp-opt gdshader-keyword-list 'symbols))
