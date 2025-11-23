@@ -88,7 +88,8 @@
           gdshader-keyword-list
           gdshader-type-list
           gdshader-qualifier-list)
-  "List of all the font-locked words.  Useful for completion systems like `company-keywords'.")
+  "List of all the font-locked words.
+Useful for completion systems like `company-keywords'.")
 
 (defvar gdshader--type-rx (regexp-opt gdshader-type-list 'symbols))
 (defvar gdshader--keywords-rx (regexp-opt gdshader-keyword-list 'symbols))
@@ -112,11 +113,10 @@
      (,gdshader--keywords-rx         . glsl-keyword-face)
      (,gdshader--qualifier-rx        . glsl-qualifier-face))))
 
-  ;; (set (make-local-variable 'font-lock-defaults) '(gdshader-font-lock-keywords)))
-
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.gdshader\\'" . gdshader-mode))
 
 (provide 'gdshader-mode)
+
 ;;; gdshader-mode.el ends here
