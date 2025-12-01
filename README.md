@@ -7,24 +7,26 @@ See [Godot's shader reference documentation](https://docs.godotengine.org/en/sta
 
 ## Usage
 
-Clone this repository in your emacs path and use:
+Install from Melpa and require:
 ```el
 (require 'gdshader-mode)
 ```
 
-Or, if using `use-package` and `straight`
+Or, via `use-package`:
+```
+(use-package gdshader-mode)
+```
+
+Or, if using `use-package` and `vc` to download directly from git:
 ```el
-(use-package gdshader-mode 
-  :straight (gdshader-mode :type git :host github :repo "bbbscarter/gdshader-mode"))
+(use-package gdshader-mode :vc (gdshader-mode :url "https://github.com/bbbscarter/gdshader-mode") 
 ```
 
 To enable company-mode keyword completion, gdshader-mode provides a list of
-keywords through `gdshader-all-keywords`. This can be used like so:
+keywords through `gdshader-all-keywords`. Use like so:
 
 ```el
-(use-package gdshader-mode
-  :straight (gdshader-mode :type git :host github :repo "bbbscarter/gdshader-mode")
-
+(use-package gdshader-mode 
   ;; Optional customisations for company-mode completion.
   :init
   (defun gdshader-config()
